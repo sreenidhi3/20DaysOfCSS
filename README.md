@@ -13,6 +13,5 @@ Till now I know :
 1. Node.js
 1. HTML 
 1. CSS
-1. Bootstrap
 1. chalk
 1. Repl.it
