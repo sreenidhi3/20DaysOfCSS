@@ -2,6 +2,8 @@
 
 Personal Portfolio in making. 
 
+Portfolio website to showcase my projects for neoG.camp. 
+
 Hey! I am Sreenidhi Bendre. 
 I am a second year Computer Engineering student.
 
