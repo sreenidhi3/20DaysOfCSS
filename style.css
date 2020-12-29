@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap');
+
+:root {
+    --primary-black: #1b1612;
+    --secondary-black: #383532;
+    --primary-orange: #a35218;
+    --yellow-orange: #f8a73f;
+    --primary-beige:#e6dccc;
+    --light-beige: #f5eee4;
+    --gray-green: #e2e2d6;
+}
+
+body{
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    background-color: aliceblue;
+    color: var(--primary-black);
+    font-family: 'Montserrat';
+    background-color: var(--light-beige);
+}
+
+.nav{
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    padding-bottom: 1rem ;
+    margin-bottom: 1rem;
+    color: var(--secondary-black);
+    background-color: var(--primary-beige);
+    border-radius:0px 0px 20px 20px;
+    width: 100%;
+    box-shadow: 2px 2px var(--secondary-black);
+}
+
+.nav-brand{
+    display: block;
+    margin: 0%;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    color: var(--secondary-black);
+    text-align: left;
+    font-size: large;
+}
+
+#title{
+    color: var(--secondary-black);
+}
+
+.container{
+    margin: auto;
+    padding: 3rem;
+    text-align: left;
+    max-width: 800px;
+}
+
+.unordered{
+    list-style: none;
+    text-align: left;
+}
+
+.section{
+    padding: 0%;
+    margin: 0%;
+    background-color: var(--gray-green);
+}
+
+.primary-bt{
+    text-decoration: none;
+    color: var(--primary-beige);
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 1px solid var(--primary-black);
+    background-color: var(--primary-black);
+    border-radius: 10px;
+}
+
+.parallax{
+    background-image: url('assests/parallax.png');
+    background-attachment: fixed;
+    background-position: center center ;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+.te{
+    min-height: 800px;
+    background-color: aliceblue;
+}
+
+.parallax-text{
+    position: relative;
+    top: 50%;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border: 4px solid var(--primary-beige);
+    min-height: 300px;
+    max-height: 500px;
+    max-width: 800px;
+    transform: translateY(90px);
+    text-align: center;
+}
+#title-para{
+    font-family: 'Montserrat';
+    font-size: 2rem;
+
+}
+
+.title-brand{
+    font-family: 'Shadows Into Light';
+    font-size: 5rem;
+
+}
