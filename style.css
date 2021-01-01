@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Life+Savers:wght@800&display=swap');
 
 :root {
     --primary-black: #1b1612;
@@ -212,3 +213,21 @@ a{
 {
     transform: rotateY(0deg) scale(1.11, 1) skewY(6deg);
 }
+
+.clipped{
+    margin: 0;
+    background: url('https://images.pexels.com/photos/1144687/pexels-photo-1144687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') fixed;
+    -webkit-text-fill-color: transparent;
+    background-clip:text;
+    -webkit-background-clip: text;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.author{
+    margin: 0;
+    text-transform: uppercase !important;
+    font-weight: bolder;
+    font-size: 400px;
+}
+
