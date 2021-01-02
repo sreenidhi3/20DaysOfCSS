@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express-Space</title>
+    <link href="style.css" rel="stylesheet"/>
+    
+</head>
+<body>
+    <nav class="nav">
+        <span class="nav-brand">sreenidhi-bendre</span>
+        <center> <h1 id="title">Input Color</h1> </center> 
+    </nav>
+    <div class="input-color"> 
+        
+        <span> Select a background color: <input type="color" id="bgcolor"> </span>
+        <span> Select a color: <input type="color" id="color"> </span>
+        <br/>
+        <button class="change"> Change </button>
+        <br/>
+        See changes in section below:
+    </div>
+
+    <div class="section-center"> 
+        <h1> Welcome to <br/><div class="title-brand">Express-Space</div><h1>
+    </div>
+    <script>
+        colorChange = document.querySelector('#color');
+        bgChange = document.querySelector('#bgcolor');
+        btnChange = document.querySelector('.change');
+        changeBg = document.querySelector('.section-center');
+
+        console.log("clci");
+
+        btnChange.addEventListener('click', ()=>{
+            console.log(bgChange.value, colorChange.value);
+            changeBg.style.backgroundColor = bgChange.value;
+            changeBg.style.color = colorChange.value;
+        })
+    </script>
+</body>
+</html>                                                                 

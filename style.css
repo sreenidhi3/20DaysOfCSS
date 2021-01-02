@@ -68,6 +68,13 @@ body{
     background-color: var(--gray-green);
 }
 
+.section-center{
+    padding: 10vh;
+    margin: 0%;
+    background-color: var(--gray-green);
+    text-align: center;
+}
+
 a{
     text-decoration: none;
     color: var(--primary-black);   
@@ -231,3 +238,42 @@ a{
     font-size: 400px;
 }
 
+.input-color{
+    padding: 2vh;
+    margin: 2vh;
+    text-align: center;
+}
+
+.input-color span{
+    padding-right: 10vh;
+}
+
+#color{
+    padding: 0.2vh;
+    width: 5vh;
+    height: 5vh;
+    text-decoration: none;
+    border-radius: 1vh;
+    position: relative;
+    border: none;
+}
+
+#bgcolor{
+    padding: 0.2vh;
+    width: 5vh;
+    height: 5vh;
+    text-decoration: none;
+    border-radius: 1vh;
+    border: none;
+    
+}
+
+.change{
+    padding: 2vh;
+    margin: 5vh;
+    background-color: var(--yellow-orange);
+    border: none;
+    border-radius: 1vh;
+    color: #fff;
+    font-size: medium;
+}
