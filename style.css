@@ -277,3 +277,65 @@ a{
     color: #fff;
     font-size: medium;
 }
+/*---day 6 Cards (date 03/01/2021)---*/
+
+.block{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    max-width: 800px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.element{
+    width: 40%;    
+    margin: 4%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 0.4s ease;
+    box-shadow: 0px 20px 20px -15px rgba(0,0,0,.5);
+}
+.element:hover{
+    box-shadow: 0px 30px 50px -15px rgba(0,0,0,.3);
+    transform: translateY(-2px) translateZ(30px);
+}
+
+.element-bg{
+    width: 100%;
+    max-width: 100%;
+    height: 0;
+    padding-top: 123%;
+    background-image: url("assests/night1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.element-para{
+    padding-top: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: 0.52rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #505050;
+}
+
+.element-header{
+    padding-top: 0.35em;
+    padding-left: 0.35em;
+    padding-right: 0.35em;
+    padding-bottom: 0.65em;
+    font-size: 2rem;
+    color: #2b2b2b;
+    font-weight: bold;
+}
+
+.element-bg, .element-para, .element-header{
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    background-color: #fefefe;
+}
