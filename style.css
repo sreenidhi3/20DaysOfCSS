@@ -340,7 +340,7 @@ a{
     background-color: #fefefe;
 }
 
-/*---day 6 Cards (date 03/01/2021)---*/
+/*---day 7 Cards (date 04/01/2021)---*/
 
 .item{
     display: block;
@@ -438,3 +438,61 @@ a{
     background-color: var(--primary-orange);
     transition: all 0.5s ease-in-out;
 }
+
+/*---day 8 nav-menu (date 05/01/2021)---*/
+
+header{
+    height: 80px;
+    display: block;
+}
+
+.nav-menu{
+    background: #010316e5;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.horizontal-list{
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+.nav-tab{
+    padding: 0px 28px;
+    display: block;
+    font-size: 18px;
+    transition: background 0.3s;
+    color: #eeeeee;
+    text-decoration: none;
+    box-sizing: border-box;
+    height: 77px;
+    padding-top: 25px;
+}
+
+.horizontal-list li{
+    float: left;
+    padding: 0px;
+    height: 80px;
+}
+
+.active-tab{
+    padding: 0;
+    margin: 0;
+    height: 3px;
+    min-height: 4px;
+    width: 0%;
+    transition: all step-end;
+    background-color:  #010316e5; 
+}
+
+.horizontal-list li:hover{
+    background-color:  #010316b2;
+} 
+
+.horizontal-list li:hover .active-tab{
+    width: 100%; 
+    background-color: rgb(163, 255, 255);
+} 
