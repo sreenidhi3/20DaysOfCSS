@@ -591,9 +591,11 @@ figcaption i:hover {
     min-width: 500px;
     max-width: 800px;
     width: 100%;
-    height: 400px;
+    height: 500px;
     margin: auto;
     margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 50px 10px 50px 10px ;
 }
 
 .flexible-option.active{
@@ -615,9 +617,10 @@ figcaption i:hover {
     background-size: auto 100%;
     background-position: center;
     cursor: pointer;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01);
     border-radius: 40px;
     box-sizing: border-box;
+    box-shadow: 3px 5px 15px -5px #2b2b2b;
 }
 
 
@@ -625,7 +628,7 @@ figcaption i:hover {
     display: flex;
     position: absolute;
     height: 55px;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01);
     bottom: 20px;
     left: 20px;
 }
@@ -634,7 +637,7 @@ figcaption i:hover {
     display: flex;
     position: absolute;
     height: 55px;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01);
     bottom: 2px;
     left: 3px;
     width: 450px;
@@ -678,7 +681,7 @@ figcaption i:hover {
     font-weight: bold;
     font-size: 1.5rem;
     position: relative;
-    transition: 0.5s cubic-bezier(0.05, 0.59, 0.41, 0.95) opacity 0.5s ease-out;
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01) opacity 0.5s ease;
     box-sizing: border-box;
     width: 400px;
     padding-top: 0;
@@ -693,7 +696,7 @@ figcaption i:hover {
     opacity: 1;
     transition-delay: 0.1s;
     position: relative;
-    transition: 0.5s cubic-bezier(0.05, 0.59, 0.41, 0.95) opacity 0.5s ease-out;
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01) opacity 0.5s ease;
     box-sizing: border-box;
     width: 400px;
     padding-top: 0;
@@ -701,4 +704,66 @@ figcaption i:hover {
     align-self: flex-start;
     text-align: left !important;
     text-align: left;
+}
+/****************************8888*/
+.flexible-option:hover {
+    width: 550px !important;
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 500px;
+    margin: 0;
+    border-radius: 40px;
+    background-size: auto 100%;
+    box-shadow: 3px 5px 15px -5px #2b2b2b;
+}
+
+.flexible-option:hover .option-label .caption .option-label-para{
+    line-height: 15px;
+    left: 0px;
+    opacity: 1;
+    transition-delay: 0.1s;
+    position: relative;
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01) opacity 0.5s ease;
+    box-sizing: border-box;
+    width: 400px;
+    padding-top: 0;
+    padding-left: 20px ;
+    align-self: flex-start;
+    text-align: left !important;
+    text-align: left;
+}
+
+.flexible-option:hover .option-label .caption .option-label-header{
+    line-height: 15px;
+    left: 0px;
+    opacity: 1;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: relative;
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01) opacity 0.5s ease;
+    box-sizing: border-box;
+    width: 400px;
+    padding-top: 0;
+    padding-left: 20px;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.flexible-option:hover .option-label .caption{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 10px;
+    color: #eeeeee;
+    white-space: pre;
+    width: 400px;
+}
+
+.flexible-container .flexible-option:hover .option-label{
+    display: flex;
+    position: absolute;
+    height: 55px;
+    transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01);
+    bottom: 20px;
+    left: 20px;
 }
