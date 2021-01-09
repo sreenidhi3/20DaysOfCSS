@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Accordion</title>
+    <style>
+        html {
+            font-size: 8px;    
+         }
+         html, body {
+            background-color: #F2F2F2 !important;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 320px) {
+            html {
+                font-size: calc(8px + 2 * (100vw - 700px) / 300);
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            html {
+                font-size: calc(10px + 6 * (100vw - 700px) / 200);
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            html {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordion-container">
+        <button class="accordion-element">Monospace</button>
+        <div class="accordion-content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            </p>
+       </div>
+       <button class="accordion-element">Serif</button>
+        <div class="accordion-content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            </p>
+       </div>
+       <button class="accordion-element">Sans Serif</button>
+        <div class="accordion-content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+            </p>
+       </div>
+    </div>
+
+    <script>
+        let accordions = document.querySelectorAll(".accordion-element");
+        //console.log(accordions, accordions[0]);
+        for(var i=0; i<accordions.length; i++){
+            //console.log(i)
+            accordions[i].addEventListener("click", function(){
+                this["classList"].toggle("active-accordion-element")
+                //accordions[i].classList.toggle("active-accordion-element");
+                let item = this.nextElementSibling;
+                //console.log(item)
+                if (item.style.maxHeight){
+                    item.style.maxHeight = null;
+                }else{
+                    item.style.maxHeight = item.scrollHeight +"px";
+                }
+            });
+        }
+    </script>
+ 
+
+</body>
+
+</html>

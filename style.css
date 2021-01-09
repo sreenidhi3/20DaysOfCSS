@@ -498,7 +498,7 @@ header{
 } 
 
 
-/*---day 8 Profile Cards (date 07/01/2021)---*/
+/*---day 9 Profile Cards (date 07/01/2021)---*/
 
 .fig{
     position: relative;
@@ -581,7 +581,7 @@ figcaption i:hover {
     opacity: 1;
 }
 
-/*---day 9 flexible Cards (date 08/01/2021)---*/
+/*---day 10 flexible Cards (date 08/01/2021)---*/
 
 .flexible-container{
     display: flex;
@@ -766,4 +766,66 @@ figcaption i:hover {
     transition: 0.1s cubic-bezier(0.67, 0.99, 0.7, 1.01);
     bottom: 20px;
     left: 20px;
+}
+
+/*---day 11 Accordion (date 09/01/2021)---*/
+
+.accordion-container{
+    width: 100%;
+    max-width: 25rem;
+    padding: 2rem;
+    margin: 3rem auto;
+    background: #222;
+    border-radius: 1rem;
+    border: 1px solid#222;
+    box-shadow: 0px 0px 34px -8px rgba(0, 0, 0, 0.55);
+}
+
+.accordion-element{
+    background-color: #333;
+    color: #eeeeee;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: 1px solid #222;
+    text-align: left;
+    outline: none; 
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 0px 34px -8px rgba(0, 0, 0, 0.80);
+}
+
+.accordion-element:first-child{
+    border-radius: 1rem 1rem 0 0;
+}
+
+.accordion-element:nth-last-child(1){
+    border-radius: 0 0 1rem 1rem;
+}
+
+.active-accordion-element{
+    background-color: rgba(206, 30, 65, 0.801);
+}
+
+.accordion-element:hover{
+    background-color: rgba(206, 30, 65, 0.801);
+}
+.accordion-element::after{
+    content: "\002B";
+    color: #eeeeee;
+    font-weight: bold;
+    float: right;
+    margin-left: 0.5rem;
+}
+
+.active-accordion-element{
+    content: "\2212";
+}
+
+.accordion-content{
+    padding: 0 1rem;
+    background-color: #222;
+    color: #aaa;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 }
