@@ -829,3 +829,129 @@ figcaption i:hover {
     max-height: 0;
     transition: max-height 0.2s ease-out;
 }
+
+/*---day 12 Post (date 10/01/2021)---*/
+
+.post-container{
+    display: block;
+    margin: auto;
+    padding: 30px;
+    width: 600px;
+    text-align: center;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px -5px #505050 ;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.post{
+    color: #727171;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.post div i{
+    text-align: center;
+    padding: 8px;
+    margin-right: 10px;
+    color: cornflowerblue;
+    background-color: rgba(218, 218, 218, 0.25);
+    border-radius: 50%;
+}
+
+.post div {
+    display: flex;
+    align-items: center;
+}
+
+.post-content{
+    border: 1px solid rgba(185, 184, 184, 0.253);
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    align-content: flex-start;
+    height: 12vh;
+}
+
+.post-content .profile-img{
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post-content .input-post{
+    margin-top: 10px;
+    border: none;
+    width: 100%;
+    height: 80%;
+    color: darkgrey;
+    padding-left: 10px;
+    font-family: 'Montserrat';
+}
+
+.feature{
+    margin-top: 20px;
+    padding: 15px;
+    color: darkolivegreen;
+    border-radius: 30px;
+    background-color:rgba(100, 148, 237, 0.202);
+    margin-right: 25px;
+    align-items: center;
+}
+
+.feature div{
+    font-size: 11px;
+    font-weight: bolder;
+    color: #505050;
+}
+
+.features-list{
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-evenly;
+    align-self: flex-start;
+}
+
+.feature div i{
+    padding: 5px;
+    margin: auto;
+    color: #eee;
+    border-radius: 50%;   
+    margin-right: 5px;
+    background-color: cornflowerblue;
+}
+
+.feature.more{
+    background-color: rgba(185, 184, 184, 0.253);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.more div {
+    min-width: 5px;
+    width: 5px;
+    min-height: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #383532;
+    display: block;
+    margin: 3px;
+}
+
+.feature:nth-child(1){
+    background-color: rgba(255, 118, 118, 0.286);
+}
+.feature:nth-child(1) div i{
+    background-color:  rgba(255, 118, 118, 0.96);
+}
+
+.feature:nth-child(3){
+    background-color: rgba(245, 188, 24, 0.223);
+}
+.feature:nth-child(3) div i{
+    background-color:  rgb(248, 188, 24);
+}

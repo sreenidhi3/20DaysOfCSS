@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Post</title>
+    <style>
+        html {
+            font-size: 8px;
+        }
+
+        html,
+        body {
+            background-color: #F2F2F2 !important;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 320px) {
+            html {
+                font-size: calc(8px + 2 * (100vw - 700px) / 300);
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            html {
+                font-size: calc(10px + 6 * (100vw - 700px) / 200);
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            html {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br /><br /><br />
+    <div class="post-container">
+        <div class="post">
+            <div><i class="fa fa-edit fa-2x"></i>Create Post</div>
+        </div>
+        <div class="post-content">
+            <img class="profile-img" src="assests/night1.png" alt="profilePic">
+            <textarea class="input-post" placeholder="What's on your mind?"></textarea>
+        </div>
+        <div class="features-list">
+            <div class="feature">
+                <div><i class="fa fa-video-camera fa-2x"></i>Live</div>
+            </div>
+            <div class="feature">
+                <div><i class="fa fa-image fa-2x"></i>Photo/Video</div>
+            </div>
+            <div class="feature">
+                <div><i class="fa fa-smile-o fa-2x"></i>Feeling/Activity</div>
+            </div>
+            <div class="feature more">
+                <div>  </div>
+                <div>  </div>
+                <div>  </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
