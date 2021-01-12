@@ -955,3 +955,87 @@ figcaption i:hover {
 .feature:nth-child(3) div i{
     background-color:  rgb(248, 188, 24);
 }
+
+/*---day 13 Connect Button (date 11/01/2021)---*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.connect-button{
+    width: 250px;
+    height: 100px;
+    background-color: cadetblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 40px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;    
+    position: relative;
+    cursor: pointer;
+    transition: .2s linear;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3), inset 5px 2px 10px rgba(7, 2, 2, 0.3);
+} 
+
+.connect-button:hover{
+    transform: scale(1.1);
+}
+
+.connect-button span{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #051e24;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 999;
+    font-size: 30px;
+    transition: 0.5s linear;
+    border-radius: 40px;
+}
+
+.connect-button:hover span{
+    transform: translateX(-100%);
+    transition-delay: .3s;
+    padding: 0;
+}
+
+.connect-button a{
+    padding: 5px;
+    flex: 1;
+    font-size: 20px;
+    color: #2b2b2b;
+    text-align: center;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 0.3s linear;
+}
+
+.connect-button:hover a{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.connect-button a:nth-of-type(1){
+    transition-delay: 1s;
+}
+
+.connect-button a:nth-of-type(2){
+    transition-delay: 0.8s;
+}
+
+.connect-button a:nth-of-type(3){
+    transition-delay: 0.5s;
+}
+
+.connect-button a:nth-of-type(4){
+    transition-delay: 0.4s;
+}
