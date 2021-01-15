@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Life+Savers:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 
 :root {
     --primary-black: #1b1612;
@@ -65,12 +68,14 @@ body{
 .section{
     padding: 0%;
     margin: 0%;
+    width: 100%;
     background-color: var(--gray-green);
 }
 
 .section-center{
     padding: 10vh;
     margin: 0%;
+    width: 100%;
     background-color: var(--gray-green);
     text-align: center;
 }
@@ -166,9 +171,12 @@ a{
 }
 
 .paper-effect{
-    display: block;
+    display: flex;
+    align-self: center;
+    justify-content: center;
     margin: auto;
-    padding: 100px;
+    width: 100%;
+    padding: 100px 0 100px 0;
     text-align: center;
     position: relative;
     background-color: #fff;
@@ -450,6 +458,7 @@ header{
     background: #010316e5;
     border-radius: 5px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .horizontal-list{
@@ -910,8 +919,7 @@ figcaption i:hover {
 
 .features-list{
     display: flex;
-    justify-content: flex-start;
-    justify-content: space-evenly;
+    justify-content: center;
     align-self: flex-start;
 }
 
@@ -929,6 +937,7 @@ figcaption i:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    float: right;
 }
 
 .more div {
@@ -1064,8 +1073,17 @@ body{
     box-shadow: 0 2px 10px 0 #0008;
 }
 
+.audio-block .timeline{
+    background-color: rgb(206, 206, 206);
+    width: 100%;
+    height: 4px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 10px 0 rgba(133, 133, 133, 0.533);
+}
+
 .progress{
-    background: hsl(32, 100%, 50%);
+    background: hsl(337, 84%, 13%);
     width: 0%;
     height: 100%;
     transition: 0.2s;
@@ -1081,6 +1099,14 @@ body{
     padding: 0 0 15px 0 ;
 }
 
+.feat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding-top: 20px;
+}
+
 .play, .track, .play-toggle{
     display: flex;
     justify-content: center;
@@ -1091,6 +1117,11 @@ body{
     cursor: pointer;
     position: relative;
     content: "";
+}
+
+.forward, .backward{
+    color: rgb(133, 133, 133);
+    cursor: pointer;
 }
 
 .play i{
@@ -1109,3 +1140,57 @@ body{
 .current, .track, .length{
     padding: 5px;
 }
+
+/*---day 15 Audio Player (date 15/01/2021)---*/
+
+.audio-block{
+    font-family: 'Open Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+    overflow: hidden;
+    margin: auto;
+    padding: 30px 10px 20px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #fdfdf9;
+    box-shadow: 0 0 20px -5px #202020;
+}
+.audio-block h2{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 4px;
+    margin: 15px;
+}
+.audio-block h4{
+    line-height: 2px;
+    margin: 15px;
+    color: #505050;
+}
+
+.track-image-c{
+    width: 150px;
+    height: 150px;
+    padding: 10px 0 0 0;
+    margin: auto;
+}
+
+.track-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 20px 5px rgba(0,0,0,.5);
+}
+
+.rotate{
+    animation: rotatePlayer 5s linear infinite;
+}
+
+@keyframes rotatePlayer{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+

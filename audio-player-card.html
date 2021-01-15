@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    
+    <title>Cards</title>
+    <style>
+        html {
+            font-size: 8px;    
+         }
+         html, body {
+            background-color: #F2F2F2 !important;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 320px) {
+            html {
+                font-size: calc(8px + 2 * (100vw - 700px) / 300);
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            html {
+                font-size: calc(10px + 6 * (100vw - 700px) / 200);
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            html {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br/>
+    <br/>
+    <br/>
+    <div class="block">
+        <div class="audio-block">
+            <h2> Perfect </h2>
+            <h4>Ed Sheeran</h4>
+            <div class="track-image-c">
+                <img class="track-image" src="assests/night1.png">
+            </div>
+            <br/>
+            <div class="timeline">
+                <div class="progress"></div>
+            </div>
+            <div class="controls">
+                <div class="feat">
+                    <div class="backward"><i class="fa fa-step-backward fa-2x"></i></div>
+                    <div class="play play-toggle"><i class="fa fa-play fa-2x"></i></div>
+                    <div class="forward"><i class="fa fa-step-forward fa-2x"></i></div>
+                </div>
+                <div class="time">
+                    <div class="current">0:00</div>
+                    <div class="track"></div>
+                    <div class="length"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //calculate time to display
+                const getTimeCodeFromNum = (e) => {
+                    let sec = parseInt(e);
+                    let mins = parseInt(e/60);
+                    sec -= mins*60;
+                    const hrs = parseInt(mins/60);
+                    mins -= hrs*60;
+        
+                    if(hrs === 0)
+                    return `${mins}:${String(sec%60).padStart(2,0)}`;
+                    else
+                    return `${String(hrs).padStart(2,0)}:${mins}:${String(sec%60).padStart(2,0)}`;
+                } 
+        //variable to select audioPlayer
+                const audioPlayer = document.querySelector(".audio-block");
+                var audio = new Audio("https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3");
+                console.dir(audio);
+        //load audio and set volume
+                audio.addEventListener("loadeddata", ()=>{
+                    audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(audio.duration);
+                    audio.volume = 0.80;
+                }, false);
+        //to skip around song time from timeline positioning
+                const timeline = audioPlayer.querySelector(".timeline");
+                timeline.addEventListener("click", e=>{
+                    const timelineWidth = window.getComputedStyle(timeline).width;
+                    const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
+                    audio.currentTime = timeToSeek;
+                }, false);
+        //check audio percentage and update time accordingly
+                setInterval(()=>{
+                    const progressBar = audioPlayer.querySelector(".progress");
+                    progressBar.style.width = audio.currentTime / audio.duration *100 + "%";
+                    audioPlayer.querySelector(".time .current").textContent = getTimeCodeFromNum(audio.currentTime);
+                }, 500)
+        //toggle play pause click
+                const icon = audioPlayer.querySelector(".controls .play-toggle i");
+                const playBt = audioPlayer.querySelector(".controls .play-toggle");
+                const rotateTrack = audioPlayer.querySelector(".track-image");
+
+                const state = ()=>{
+                    if(audio.paused){
+                        playBt.classList.remove("play");
+                        playBt.classList.add("pause")
+                        rotateTrack.classList.add("rotate");
+                        icon.classList.add("fa-pause")
+                        icon.classList.remove("fa-play")
+                        audio.play();
+                    }else{
+                        playBt.classList.remove("pause");
+                        playBt.classList.add("play");
+                        rotateTrack.classList.remove("rotate");
+                        icon.classList.add("fa-play");
+                        icon.classList.remove("fa-pause");
+                        audio.pause();
+                    }
+                }
+                playBt.addEventListener("click", ()=>{state()}, false);
+        //previous and next clicks
+                const back =  audioPlayer.querySelector(".backward");
+                const next =  audioPlayer.querySelector(".forward");
+                var songIndex = 0;
+                const prevSong = () =>
+                {   
+                    audio.pause();
+                    rotateTrack.classList.remove("rotate");
+                    icon.classList.add("fa-play")
+                    icon.classList.remove("fa-pause")
+                    audio.src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/remember%20the%20old%20days.mp3";
+                    console.dir(audio);
+                }
+
+                const nextSong = () =>
+                {
+                    audio.pause();
+                    rotateTrack.classList.remove("rotate");
+                    icon.classList.add("fa-play")
+                    icon.classList.remove("fa-pause")
+                    audio.src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/Director.mp3";
+                    console.dir(audio);
+                }
+
+                back.addEventListener('click', prevSong);
+                next.addEventListener('click', nextSong);
+            </script>
+</body>
+
+</html>
+
+
