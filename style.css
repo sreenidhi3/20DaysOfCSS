@@ -1194,3 +1194,38 @@ body{
     to{ transform: rotate(360deg); }
 }
 
+/*---day 16 Callout Block (date 16/01/2021)---*/
+
+.callout{
+    margin: 10px;
+    padding: 20px 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    border: 1px solid  rgb(153, 153, 153, 0.2);
+    border-left-width: 4px;
+    border-left-color: cornflowerblue ;
+}
+
+.callout-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px ;
+}
+
+.callout-block h3{
+    padding: 0px;
+    margin: 0px;
+}
+
+hr{
+    padding: 0px;
+    margin: 10px 0 5px 0;
+    width: 90%;
+    height: 0px;
+    background-color: #91919152;
+}
