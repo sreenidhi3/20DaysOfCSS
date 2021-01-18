@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Spotify Search</title>
+</head>
+<body style="background-color: #000;">
+    
+    <br/>
+    <div class="spotify-container">
+        <h2>Search</h2>
+        <div class="search">
+          <i class="fa fa-search"></i>
+          <input type ="text" placeholder="Artists, songs, or podcasts"/>
+        </div>
+        <p>Browse all</p>
+        <div class="genre-cards-list">
+          <div class="genre-cards">
+            <div class="card-title">Rock</div>
+            <div class="card-cover"> 
+              <img src="https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg"> 
+            </div>
+          </div>
+        </div>
+      </div>
+    <br/><br/>
+
+    <script>
+        let cards = document.querySelector(".genre-cards-list");
+
+        const genres = [
+            { title: "Rock", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#f14a4a", end: "#a70a0a"},
+            {title: "Jazz", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#a841b4", end: "#6e0d5d"},
+            {title: "Folk & Acoustic", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#52cdda", end: "#0aa71d"},
+            {title: "Pop", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#4a9cf1", end: "#4e0aa7"},
+            {title: "2020 Wrapped", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#d048b4", end: "#db0e5d"},
+            {title: "Indie", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#53ad2a", end: "#03472d"},
+            {title: "Party", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#4a9cf1", end: "#4e0aa7"},
+            {title: "2020 Wrapped", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#a041b4", end: "#7b83bd"},
+            {title: "Indie", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#82cdda", end: "#a0a71d"},
+            {title: "Party", cover: "https://www.mikeconstantia.com/wp-content/themes/mikeconstantia/images/bg-banner-span-large.jpg", start: "#87c2ff", end: "#0a5fa7"}
+        ]
+
+        var cardsEle = [];
+
+        const cardsRender = ()=>{
+            genres.map(g=>{
+                cardsEle.push(`<div class="genre-cards" 
+                        style="background: linear-gradient(to left, ${g.start}, ${g.end});">
+                    <div class="card-title"> ${g.title} </div>
+                    <div class="card-cover"> 
+                        <img src=${g.cover}> 
+                    </div>
+                </div>`)
+            });
+            var toStr="";
+            for (let i = 0; i<cardsEle.length ; i++){
+                toStr = toStr + cardsEle[i];
+            }
+            //console.log(toStr);
+            cards.innerHTML = toStr;
+        }
+         //console.log(cardsEle);
+         
+        
+         
+        cardsRender();
+
+    </script>
+
+    
+</body>
+</html>

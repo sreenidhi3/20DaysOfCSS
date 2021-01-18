@@ -1230,7 +1230,7 @@ hr{
     background-color: #91919152;
 }
 
-/*---day 17 Glass Morphism (date 17/01/2021)---*/
+/*---day 17 Glass Morphism/ Spotify Player (date 17/01/2021)---*/
 
 .gradient{
     background-image: radial-gradient(#074842, #08443a ,#084735, #052718);
@@ -1363,4 +1363,102 @@ hr{
 .like{
     color: #eee;
     font-size: 18px;
+}
+
+/*---day 18 Spotify  Search (date 18/01/2021)---*/
+
+.spotify-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+    width: 350px;
+    height: auto;
+    background-color: #000;
+}
+
+.spotify-container h2{
+    margin: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.spotify-container .search{
+    margin: 5px;
+    padding: 10px;
+    color: #333;
+    font-size: 18px;
+    background-color: #fff;
+    width: 300px;
+    align-self: center;
+    border-radius: 4px;
+}
+
+.spotify-container input{
+    background-color: #fff;
+    border: 0px;
+    padding: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.spotify-container p{
+    margin: 5px;
+    padding: 10px;
+    color:#fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.genre-cards-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    height: 100;
+}
+
+.genre-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 150px;
+    min-width: 150px;
+    min-height: 80px;
+    height: 80px;
+    background: linear-gradient(to left, #f14a4a, #a70a0a);
+    margin: 10px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.card-title{
+    padding-left: 12px;
+    padding-top: 10px;
+}
+
+.card-cover{
+    width: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    height: 60px;
+    overflow: hidden;
+    object-fit: fill;
+    transform: rotate(15deg) translateY(10px) translateX(20px);
+}
+
+.card-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    overflow: hidden;
+    
 }
