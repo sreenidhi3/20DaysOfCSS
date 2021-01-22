@@ -63,6 +63,11 @@ body{
 .unordered{
     list-style: none;
     text-align: left;
+    transform: rotate(180deg);
+}
+
+.unordered li{
+    transform: rotate(-180deg);
 }
 
 .section{
