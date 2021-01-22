@@ -45,10 +45,10 @@
     <br/>
     <div class="block">
         <div class="audio-block">
-            <h2> Perfect </h2>
-            <h4>Ed Sheeran</h4>
+            <h2 id="title"> Music 1 </h2>
+            <h4 id="singer"> Artist 1 </h4>
             <div class="track-image-c">
-                <img class="track-image" src="assests/night1.png">
+                <img class="track-image" src="https://img.freepik.com/free-vector/modern-mosaic-wallpaper-rose-gold-black_53876-58064.jpg?size=626&ext=jpg&ga=GA1.2.958418818.1610361415">
             </div>
             <br/>
             <div class="timeline">
@@ -70,6 +70,21 @@
     </div>
     <script>
         //calculate time to display
+
+        const trackList = [
+            {title: "Music 1", singer: "Artist 1", track: "https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3", trackImage: "https://img.freepik.com/free-vector/modern-mosaic-wallpaper-rose-gold-black_53876-58064.jpg?size=626&ext=jpg&ga=GA1.2.958418818.1610361415"},
+            {title: "Music 2", singer: "Artist 2", track: "https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/remember%20the%20old%20days.mp3", trackImage: "https://img.freepik.com/free-vector/abstract-colorful-topographic-map-design-vector_1035-14092.jpg?size=626&ext=jpg&ga=GA1.2.958418818.1610361415"},
+            {title: "Music 3", singer: "Artist 3", track: "https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/Director.mp3", trackImage: "https://img.freepik.com/free-vector/background-pattern-design_1181-130.jpg?size=338&ext=jpg&ga=GA1.2.958418818.1610361415"},
+        ]
+
+        var trackId = 0;
+
+        const titleTrack = document.querySelector("#title");
+        const singer = document.querySelector("#singer");
+        const trackimage = document.querySelector(".track-image"); 
+        console.log(titleTrack.textContent , singer.textContent, trackimage.src)
+
+
                 const getTimeCodeFromNum = (e) => {
                     let sec = parseInt(e);
                     let mins = parseInt(e/60);
@@ -84,8 +99,9 @@
                 } 
         //variable to select audioPlayer
                 const audioPlayer = document.querySelector(".audio-block");
-                var audio = new Audio("https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3");
+                var audio = new Audio(trackList[trackId].track);
                 console.dir(audio);
+                
         //load audio and set volume
                 audio.addEventListener("loadeddata", ()=>{
                     audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(audio.duration);
@@ -131,24 +147,44 @@
                 const back =  audioPlayer.querySelector(".backward");
                 const next =  audioPlayer.querySelector(".forward");
                 var songIndex = 0;
+                
+                
                 const prevSong = () =>
                 {   
                     audio.pause();
+                    trackId = ((trackId - 1)+trackList.length) % 3;
+                    console.log(trackId);
+                    titleTrack.innerHTML=trackList[trackId].title;
+                    singer.textContent=trackList[trackId].singer;
+                    trackimage.src = trackList[trackId].trackImage;
                     rotateTrack.classList.remove("rotate");
-                    icon.classList.add("fa-play")
-                    icon.classList.remove("fa-pause")
-                    audio.src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/remember%20the%20old%20days.mp3";
+                    //icon.classList.add("fa-play")
+                    //icon.classList.remove("fa-pause")
+                    icon.classList.add("fa-pause")
+                    icon.classList.remove("fa-play")
+                    audio.src=trackList[trackId].track;
                     console.dir(audio);
+                    audio.play();
+                    rotateTrack.classList.add("rotate");
                 }
 
                 const nextSong = () =>
                 {
                     audio.pause();
+                    trackId = (trackId + 1) % 3;
+                    console.log(trackId);
+                    titleTrack.textContent=trackList[trackId].title;
+                    singer.textContent=trackList[trackId].singer;
+                    trackimage.src=trackList[trackId].trackImage;
                     rotateTrack.classList.remove("rotate");
-                    icon.classList.add("fa-play")
-                    icon.classList.remove("fa-pause")
-                    audio.src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/Director.mp3";
+                    //icon.classList.add("fa-play")
+                    //icon.classList.remove("fa-pause")
+                    icon.classList.add("fa-pause")
+                    icon.classList.remove("fa-play")
+                    audio.src=trackList[trackId].track;
                     console.dir(audio);
+                    audio.play();
+                    rotateTrack.classList.add("rotate");
                 }
 
                 back.addEventListener('click', prevSong);
