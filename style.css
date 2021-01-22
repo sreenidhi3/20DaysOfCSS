@@ -29,7 +29,7 @@ body{
 .nav{
     display: block;
     margin: 0%;
-    padding: 0%;
+    padding: 0%;n
     padding-bottom: 1rem ;
     margin-bottom: 1rem;
     color: var(--secondary-black);
@@ -1149,7 +1149,7 @@ body{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 40%;
+    width: 50%;
     overflow: hidden;
     margin: auto;
     padding: 30px 10px 20px 10px;
@@ -1363,6 +1363,7 @@ hr{
 .like{
     color: #eee;
     font-size: 18px;
+    cursor: pointer;
 }
 
 /*---day 18 Spotify  Search (date 18/01/2021)---*/
