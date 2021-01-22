@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Life+Savers:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
@@ -1534,3 +1534,67 @@ hr{
     margin: 10px;
     color: #eee;
 }
+
+/*---day 20 Countdown Timer (date 20/01/2021)---*/
+
+.sections{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 320px;
+    font-family:'Arimo','Open Sans';
+    margin: auto;
+    height: 100%;
+}
+
+.time{
+    margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.time input{
+    margin: 10px;
+    padding: 10px;
+    width: 50px;
+    border: 0;
+    background-color: azure;
+    border-radius: 5px;
+}
+
+.time input::placeholder{
+    text-align: center;
+    font-size: large;
+}
+
+.sections .start{
+    padding: 10px;
+    border-radius: 8px;
+    background-color: azure;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 50px;
+    color: black;
+    border: 0;
+    box-shadow: 0 0 10px -5px #eee;
+    cursor: pointer;
+}
+.setMins, .setSecs{
+    padding: 10px;
+}
+
+#timer{
+    width: 95%;
+    font-size: 90px;
+    font-weight: 200px;
+    color: aliceblue;
+}
+

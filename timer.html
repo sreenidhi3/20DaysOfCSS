@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link href="style.css" rel="stylesheet"/>
+
+    <style>
+        
+body, html{
+    background: linear-gradient(to left, #f14a4a, #a70a0a);
+    background: linear-gradient(to bottom right, #2dabb5, #009ea9,#4ec8c8) fixed center center;
+    text-align: center;
+    color: azure;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="sections">
+        <div class="time">
+        <span><input type="number" class="setMins" placeholder="00"></input></span> : <span><input type="number" class="setSecs" placeholder="00"></input></span><div class="start">Start</div>
+        </div>
+        
+        <div id="timer">
+            <div class="countdown" >00:00</div>
+        </div>
+        <!--<div class="start">start</div>
+        <div class="resume">resume</div>
+        <div class="pase">pas</div>-->
+    </div>
+    <script>
+        let countdown;
+const setTimeMin = document.querySelector(".setMins");
+const setTimeSec = document.querySelector(".setSecs");
+const change = document.querySelector(".countdown");
+const pause = document.querySelector('.pase');
+const start = document.querySelector('.start');
+const resume = document.querySelector('.resume');
+var running = false;
+var timeNow = Date.now();
+
+start.addEventListener('click', ()=>{
+    clearInterval(countdown);
+    time(Number(setTimeMin.value*60) + Number(setTimeSec.value));
+    setTimeSec.value='';
+    setTimeMin.value='';
+})
+
+function time(sec){
+    timeNow = Date.now();
+    timeThen = timeNow + (sec*1000);
+    //console.log(timeNow, timeThen);
+    displayTime(sec);
+    startTimer(sec);
+}
+function startTimer(sec){
+    countdown = setInterval(()=>{
+        var timeLeft = Math.round((timeThen - Date.now())/1000);
+        if (timeLeft === 1){
+            var audio = new Audio("assests/clock-.mp3");
+            console.log (audio);
+            audio.play();
+        }
+        if (timeLeft < 0){
+            clearInterval(countdown);
+            return;
+        }
+        displayTime(timeLeft);
+    }, 1000);
+}
+function displayTime(sec){
+    const timeMin = Math.floor(sec / 60);
+    const timeSec = sec % 60;
+    change.innerText = `${timeMin <10 ? '0' : ''}${timeMin} : ${timeSec < 10 ? '0':''}${timeSec}`;
+        //console.log(timeMin, timeSec );
+}
+//time(10);
+/*
+resume.addEventListener('click',()=>{
+    running = true;
+    time(timeLeft);
+})
+start.addEventListener('click',()=>{
+    running = true;
+    time(10);
+})
+pause.addEventListener('click',()=>{
+    running = false;
+}) */
+    </script>
+</body>
+</html>
