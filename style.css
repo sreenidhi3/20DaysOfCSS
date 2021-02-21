@@ -10,10 +10,10 @@
     --primary-black: #1b1612;
     --secondary-black: #383532;
     --primary-orange: #a35218;
-    --yellow-orange: #f8a73f;
-    --primary-beige:#e6dccc;
-    --light-beige: #f5eee4;
-    --gray-green: #b8b8ad;
+    --yellow-orange: #ffcd8c;
+    --primary-beige:#ffffff;
+    --light-beige: ##ffffff;
+    --gray-green: #f1f1f1;
 }
 
 body{
@@ -29,7 +29,7 @@ body{
 .nav{
     display: block;
     margin: 0%;
-    padding: 0%;n
+    padding: 0%;
     padding-bottom: 1rem ;
     margin-bottom: 1rem;
     color: var(--secondary-black);
@@ -1088,7 +1088,7 @@ body{
 }
 
 .progress{
-    background: hsl(337, 84%, 13%);
+    background: hsl(336, 100%, 55%);
     width: 0%;
     height: 100%;
     transition: 0.2s;
@@ -1139,6 +1139,7 @@ body{
 .time{
     display: flex;
     width: 100%;
+    flex-direction: row;
     justify-content: space-between;
 }
 
